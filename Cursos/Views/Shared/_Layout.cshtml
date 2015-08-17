@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>En Qué Aula Cursás</title>  
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-center">¿En Qué Aula Cursás?</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="PartialViewDiv">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" >
+                <div class="footer">
+                    <p class="text-center">Desarrollo Independiente</p>
+                    <p class="text-center">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <b>&nbsp;&nbsp;&nbsp; M L I &nbsp;&nbsp;&nbsp;</b>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/utilidades")
+</body>
+</html>

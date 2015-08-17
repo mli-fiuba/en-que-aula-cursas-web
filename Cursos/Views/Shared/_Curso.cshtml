@@ -1,0 +1,43 @@
+﻿@model Curso
+
+<ol class="breadcrumb">
+    <li><small>@ViewBag.Materia.Nombre</small></li>
+    <li><small>@Model.Codigo</small></li>
+</ol>
+
+@Ajax.ActionLink(
+    "Volver a Cursos",
+    "Lista", "Cursos",
+    new { codigoMateria = ViewBag.Materia.Codigo },
+    new AjaxOptions() { UpdateTargetId = "PartialViewDiv" },
+    new { @class = "btn btn-default btn btn-block btn-volver" }
+)
+
+<div class="row">
+	<div class="col-md-12">
+        <h3 class="text-center">@Model.Docentes</h3>
+    </div>
+</div>
+@foreach (var horario in Model.Horarios)
+{
+     <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-danger">
+                <div class="panel-body">
+                    <h4> @horario.Aula - @horario.Tipo</h4>
+                    <p>
+                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;
+                        <b>@horario.Dia</b>: <b>@{@horario.Desde}hs</b> a <b>@{@horario.Hasta}hs</b>
+                    </p>
+                </div>
+            </div>      
+        </div>
+    </div>   
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        btnVolver();
+        scrollTop();
+    });
+</script>

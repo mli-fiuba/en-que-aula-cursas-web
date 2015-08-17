@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Curso>
+
+<ol class="breadcrumb">
+    <li><small>@ViewBag.Materia.Nombre</small></li>
+    <li><small>Cursos</small></li>
+</ol>
+
+@Ajax.ActionLink(
+    "Volver a Materias",
+    "Lista", "Materias",
+    new { codigoDepartamento = ViewBag.Materia.CodigoDepartamento },
+    new AjaxOptions() { UpdateTargetId = "PartialViewDiv" },
+    new { @class = "btn btn-default btn btn-block btn-volver" }
+)
+
+@foreach (var curso in Model)
+{
+    @Ajax.ActionLink(
+        curso.Codigo + " - " + curso.Docentes,
+        "Detalle", "Cursos",
+        new { codigoCurso = curso.Codigo, codigoMateria= curso.CodigoMateria },
+        new AjaxOptions() { UpdateTargetId = "PartialViewDiv" },
+        new { @class = "btn btn-danger btn btn-block" }
+    )
+}
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        btnVolver();
+        scrollTop();
+    });
+</script>

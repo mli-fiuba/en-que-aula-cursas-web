@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Departamento>
+
+<ol class="breadcrumb">
+    <li class="text-center"><small>Departamentos</small></li>
+</ol>
+
+@foreach (var departamento in Model)
+{
+    @Ajax.ActionLink(
+        departamento.Codigo + " - " + departamento.Nombre,
+        "Lista", "Materias",
+        new { codigoDepartamento = departamento.Codigo},
+        new AjaxOptions() { UpdateTargetId = "PartialViewDiv" },
+        new { @class = "btn btn-danger btn btn-block" }
+    )    
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        btnVolver();
+    });
+</script>    

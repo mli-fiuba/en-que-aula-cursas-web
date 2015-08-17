@@ -1,0 +1,28 @@
+﻿a {
+  white-space: normal !important;
+}
+
+.btn-volver{
+  margin-top:0px !important;
+  margin-bottom:25px !important;
+}
+
+.h2-header{
+  margin-bottom: 25px;
+}
+
+.footer {
+  margin-top: 25px;
+  padding-top: 19px;
+  color: #FFF;
+  border-top: 7px solid #EB4137;
+}
+
+.panel-body{
+    background-color: #E74C3C;
+    color: #222;
+}
+
+.breadcrumb{
+    margin-bottom:15px !important;
+}
